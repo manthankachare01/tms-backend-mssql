@@ -8,24 +8,29 @@ import java.time.LocalDate;
 public class Admin {
 
     @Id
-    @Column(name = "admin_id", nullable = false, unique = true)
+    @Column(name = "admin_id", nullable = false, unique = true, length = 50)
     private String adminId; // provided by frontend, e.g. "AD-001"
 
+    @Column(length = 100)
     private String name;
 
+    @Column(length = 50)
     private String role;    // e.g. "admin" provided by frontend
 
+    @Column(length = 100)
     private String location;
+    @Column(length = 20)
     private String contact;
+    @Column(length = 20)
     private String status;  // "active" / "inactive"
 
     private LocalDate dob;
     private LocalDate doj;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String password; // stored encoded
 
     public Admin() {}

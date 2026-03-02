@@ -11,12 +11,16 @@ public class Security {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 100)
     private String name;
 
+    @Column(length = 50)
     private String role;
 
+    @Column(length = 20)
     private String contact;
 
+    @Column(length = 20)
     private String status;
 
     // keep field names similar to Admin
@@ -24,11 +28,13 @@ public class Security {
 
     private LocalDate doj;
 
-    @Column(unique = true)
+    @Column(unique = true, length = 100)
     private String email;
 
+    @Column(length = 255)
     private String password;
 
+    @Column(length = 100)
     private String location;
 
     public Security() {}

@@ -13,26 +13,26 @@ public class KeyIssuance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;           // DB primary key
 
-    @Column(name = "issuance_id", unique = true, nullable = false)
+    @Column(name = "issuance_id", unique = true, nullable = false, length = 50)
     private String issuanceId; // e.g. KI-001
 
-    @Column(name = "security_id", nullable = false)
+    @Column(name = "security_id", nullable = false, length = 50)
     private String securityId;
 
-    @Column(name = "security_name", nullable = false)
+    @Column(name = "security_name", nullable = false, length = 100)
     private String securityName;
 
-    @Column(name = "trainer_id", nullable = false)
+    @Column(name = "trainer_id", nullable = false, length = 100)
     private String trainerId;
 
-    @Column(name = "trainer_name", nullable = false)
+    @Column(name = "trainer_name", nullable = false, length = 100)
     private String trainerName;
 
-    @Column(name = "location", nullable = false)
+    @Column(name = "location", nullable = false, length = 100)
     private String location;
 
     // "issued" or "returned"
-    @Column(name = "status", nullable = false)
+    @Column(name = "status", nullable = false, length = 50)
     private String status;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

@@ -19,8 +19,9 @@ public class ReturnItem {
     private Long toolId;
     private Long kitId;
     private Integer quantityReturned;
-    @Column(name = "item_condition")
+    @Column(name = "item_condition", length = 50)
     private String condition;
+    @Column(length = 255)
     private String remark;
 
     public Long getId() { return id; }

@@ -14,7 +14,7 @@ public class ChatbotQA {
     @Column(nullable = false, length = 500)
     private String question;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = false, columnDefinition = "NVARCHAR(MAX)")
     private String answer;
 
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -23,7 +23,7 @@ public class ChatbotQA {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @Column(name = "is_active", nullable = false)
+    @Column(name = "is_active", nullable = false, columnDefinition = "BIT")
     private Boolean isActive = true;
 
     public ChatbotQA() {

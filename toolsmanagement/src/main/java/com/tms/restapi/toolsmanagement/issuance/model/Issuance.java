@@ -14,7 +14,9 @@ public class Issuance {
     private Long id;
 
     private Long trainerId;
+    @Column(length = 100)
     private String trainerName;
+    @Column(length = 100)
     private String trainingName;
     
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -23,21 +25,28 @@ public class Issuance {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime returnDate;
     
+    @Column(length = 50)
     private String status; // Pending, Approved, Rejected, Returned
+    @Column(length = 100)
     private String location;
+    @Column(length = 255)
     private String comment;
     // issuance type: TOOL or KIT
+    @Column(length = 50)
     private String issuanceType;
 
     // remarks for issuance
+    @Column(length = 255)
     private String remarks;
     
     // Admin approval fields
+    @Column(length = 100)
     private String approvedBy;
     
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime approvalDate;
     
+    @Column(length = 255)
     private String approvalRemark;
     
     @ElementCollection

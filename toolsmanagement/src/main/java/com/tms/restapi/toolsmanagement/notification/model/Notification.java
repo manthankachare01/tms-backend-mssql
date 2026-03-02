@@ -11,30 +11,31 @@ public class Notification {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String type; // TOOL_MISSING, TOOL_OBSOLETE, TOOL_DAMAGED, CALIBRATION, RETURN_OVERDUE, RETURN_DUE_TOMORROW, ISSUANCE_REMINDER
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String severity; // CRITICAL, HIGH, MEDIUM, LOW
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String title;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "NVARCHAR(MAX)")
     private String message;
 
     // Reference IDs for related entities
     private Long toolId;
     private Long trainerId;
     private Long issuanceId;
+    @Column(length = 100)
     private String location; // for location-based notifications
 
     // Target audience
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String targetRole; // SUPERADMIN, ADMIN, TRAINER, ALL
 
     // Status
-    @Column(nullable = false)
+    @Column(nullable = false, length = 20)
     private String status; // UNREAD, READ
 
     @Column(nullable = false, updatable = false)

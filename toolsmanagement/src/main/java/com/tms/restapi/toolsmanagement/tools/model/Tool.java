@@ -13,21 +13,21 @@ public class Tool {
     private Long id;
 
     // Basic details
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String description;
 
-    @Column(name = "si_no", nullable = false)
+    @Column(name = "si_no", nullable = false, length = 50)
     private String siNo;
 
-    @Column(name = "tool_no", nullable = false)
+    @Column(name = "tool_no", nullable = false, length = 50)
     private String toolNo;
 
     // Physical location of the tool (rack, cupboard, etc.)
-    @Column(name = "tool_location")
+    @Column(name = "tool_location", length = 100)
     private String toolLocation;
 
     // Plant location (Pune, etc.), forced from adminLocation
-    @Column(name = "location", nullable = false)
+    @Column(name = "location", nullable = false, length = 100)
     private String location;
 
     // Fixed total quantity for that tool
@@ -40,11 +40,11 @@ public class Tool {
     private Integer availability;
 
     // Condition of tool (Good, Damaged, etc.)
-    @Column(name = "tool_condition")
+    @Column(name = "tool_condition", length = 50)
     private String condition;
 
     // Calibration
-    @Column(name = "calibration_required", nullable = false)
+    @Column(name = "calibration_required", nullable = false, columnDefinition = "BIT")
     private boolean calibrationRequired;
 
     // Example: number of months between calibrations
@@ -58,9 +58,10 @@ public class Tool {
     private LocalDate nextCalibrationDate;
 
     // Other info
+    @Column(length = 255)
     private String remark;
 
-    @Column(name = "last_borrowed_by")
+    @Column(name = "last_borrowed_by", length = 100)
     private String lastBorrowedBy;
 
     // Count of how many times this tool has been issued
@@ -72,7 +73,7 @@ public class Tool {
     private Integer belongsToKit = 0;
 
     // Track who created this tool and when
-    @Column(name = "created_by")
+    @Column(name = "created_by", length = 100)
     private String createdBy;
 
     @Column(name = "created_at")

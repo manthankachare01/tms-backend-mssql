@@ -22,8 +22,10 @@ public class ReturnRecord {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime actualReturnDate;
 
+    @Column(length = 100)
     private String processedBy;
 
+    @Column(length = 255)
     private String remarks;
 
     @OneToMany(mappedBy = "returnRecord", cascade = CascadeType.ALL, orphanRemoval = true)

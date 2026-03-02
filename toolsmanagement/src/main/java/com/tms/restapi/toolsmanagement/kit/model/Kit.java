@@ -15,32 +15,32 @@ public class Kit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "kit_id", unique = true)
+    @Column(name = "kit_id", unique = true, length = 50)
     private String kitId;        // e.g. KIT-001
 
-    @Column(name = "kit_name")
+    @Column(name = "kit_name", length = 100)
     private String kitName;
 
-    @Column(name = "qualification_level")
+    @Column(name = "qualification_level", length = 100)
     private String qualificationLevel;
 
-    @Column(name = "training_name")
+    @Column(name = "training_name", length = 100)
     private String trainingName;
 
-    @Column(name = "location")
+    @Column(name = "location", length = 100)
     private String location;
 
     // Remaining quantity for the kit (availability count)
     @Column(nullable = false)
     private Integer availability = 1;
 
-    @Column(name = "last_borrowed_by")
+    @Column(name = "last_borrowed_by", length = 100)
     private String lastBorrowedBy;
 
-    @Column(name = "remark")
+    @Column(name = "remark", length = 255)
     private String remark;
 
-    @Column(name = "kit_condition")
+    @Column(name = "kit_condition", length = 50)
     private String condition;
 
     @ManyToMany
@@ -55,7 +55,7 @@ public class Kit {
     private List<KitAggregate> aggregates = new ArrayList<>();
 
     // Track who created this kit and when
-    @Column(name = "created_by")
+    @Column(name = "created_by", length = 100)
     private String createdBy;
 
     @Column(name = "created_at")

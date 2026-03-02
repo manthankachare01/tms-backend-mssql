@@ -11,19 +11,25 @@ public class Trainer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;   // auto-generated and unique
 
+    @Column(length = 100)
     private String name;
+    @Column(length = 50)
     private String role;
+    @Column(length = 20)
     private String contact;
+    @Column(length = 20)
     private String status;
     private LocalDate dob;
     private LocalDate doj;
 
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(name = "email", unique = true, nullable = false, length = 100)
     private String email;
 
+    @Column(length = 255)
     private String password;
 
     // location will be forced from adminLocation, not from form
+    @Column(length = 100)
     private String location;
 
     // counters / stats

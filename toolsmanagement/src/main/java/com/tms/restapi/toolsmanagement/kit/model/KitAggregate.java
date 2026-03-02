@@ -14,10 +14,10 @@ public class KitAggregate {
     @JoinColumn(name = "kit_id_fk")
     private Kit kit;
 
-    @Column(name = "name")
+    @Column(name = "name", length = 100)
     private String name;
 
-    @Column(name = "remark")
+    @Column(name = "remark", length = 255)
     private String remark;
 
     // getters and setters
